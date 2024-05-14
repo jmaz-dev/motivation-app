@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingVertical="48dp"
+        android:orientation="vertical"
+        android:background="@color/purple"
+        tools:context=".ui.UserActivity">
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/let_start"
+            android:textColor="@color/white"
+            android:textSize="28sp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/cabin"
+            android:textStyle="bold" />
+
+    <EditText
+            android:id="@+id/edit_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints="name,username"
+            android:gravity="center_horizontal"
+            android:layout_centerInParent="true"
+            android:inputType="text"
+            android:layout_marginHorizontal="32dp"
+            android:textSize="24sp"
+            android:textColorHint="@color/white"
+            android:fontFamily="@font/cabin"
+            android:hint="@string/what_name" />
+
+    <Button
+            android:id="@+id/button_save"
+            android:paddingHorizontal="32dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/save"
+            android:textSize="16sp"
+            android:textAllCaps="true"
+            android:fontFamily="@font/cabin"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            app:cornerRadius="4dp" />
+
+</RelativeLayout>
