@@ -8,6 +8,8 @@ import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.motivation.R
+import com.example.motivation.data.Mock
+import com.example.motivation.data.Phrase
 import com.example.motivation.infra.MotivationConstants
 import com.example.motivation.infra.SecurityPreferences
 import com.example.motivation.databinding.ActivityMainBinding
@@ -43,15 +45,40 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         /*Get Name*/
         handleGetUserName()
 
-        /*Set firstCheck*/
+        /*Set firstPick*/
         handleFilter(R.id.image_all)
+        handleGeneratePhrase()
     }
 
     override fun onClick(v: View) {
         if (v.id == R.id.button_new_phrase) {
-            TODO()
+            handleGeneratePhrase()
         } else if (v.id in listOf(R.id.image_all, R.id.image_emoji, R.id.image_sun)) {
             handleFilter(v.id)
+        }
+    }
+
+    private fun handleGeneratePhrase() {
+        val phrase: List<Phrase> = Mock().mListPhrase
+
+        when (categoryId) {
+            MotivationConstants.FILTER.SUN -> {
+                binding.textPhrase.text =
+                    phrase.filter { it.category == MotivationConstants.FILTER.SUN }.random()
+                        .description
+            }
+
+            MotivationConstants.FILTER.EMOJI -> {
+                binding.textPhrase.text =
+                    phrase.filter { it.category == MotivationConstants.FILTER.EMOJI }.random()
+                        .description
+            }
+
+            else -> {
+                binding.textPhrase.text =
+                    phrase.random()
+                        .description
+            }
         }
     }
 

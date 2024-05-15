@@ -1,10 +1,13 @@
 <resources>
     <string name="app_name">Motivation</string>
     <string name="hello">Olá, Kotlin!</string>
-    <string name="motivation">Riscos deve ser corridos, porque o maior perigo é não arriscar nada!</string>
+    <string name="motivation">Motivation</string>
     <string name="button_generate">Nova frase</string>
     <string name="save">Salvar</string>
     <string name="what_name">Qual seu nome?</string>
     <string name="let_start">Vamos Começar?</string>
     <string name="validation_mandatory_name">O nome é obrigatório.</string>
+    <string name="sun_phrase">Gerar frase para começar o dia</string>
+    <string name="happy_phrase">Gerar frase para alegrar o dia.</string>
+    <string name="random_frase">Gerar frase aleatória.</string>
 </resources>

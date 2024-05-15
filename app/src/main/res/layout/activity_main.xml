@@ -19,7 +19,7 @@
                 android:id="@+id/image_all"
                 android:layout_width="38dp"
                 android:layout_height="38dp"
-                android:contentDescription="TODO"
+                android:contentDescription="@string/random_frase"
                 android:src="@drawable/ic_all"
                 android:layout_weight="3" />
 
@@ -27,7 +27,7 @@
                 android:id="@+id/image_emoji"
                 android:layout_width="38dp"
                 android:layout_height="38dp"
-                android:contentDescription="TODO"
+                android:contentDescription="@string/happy_phrase"
                 android:src="@drawable/ic_emoji"
                 android:layout_weight="3" />
 
@@ -35,7 +35,7 @@
                 android:id="@+id/image_sun"
                 android:layout_width="38dp"
                 android:layout_height="38dp"
-                android:contentDescription="TODO"
+                android:contentDescription="@string/sun_phrase"
                 android:src="@drawable/ic_sun"
                 android:layout_weight="3" />
 
@@ -59,7 +59,7 @@
                 android:fontFamily="@font/cabin" />
 
         <TextView
-                android:id="@+id/phrases"
+                android:id="@+id/text_phrase"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/motivation"
@@ -75,7 +75,7 @@
                 android:layout_width="124dp"
                 android:layout_height="3dp"
                 android:elevation="4dp"
-                android:layout_below="@+id/phrases"
+                android:layout_below="@+id/text_phrase"
                 android:layout_marginTop="18dp"
                 android:layout_centerHorizontal="true"
                 android:background="@color/dark_purple" />
