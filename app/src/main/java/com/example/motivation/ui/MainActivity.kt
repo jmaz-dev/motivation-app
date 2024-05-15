@@ -1,5 +1,6 @@
 package com.example.motivation.ui
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.View
 import androidx.activity.enableEdgeToEdge
@@ -13,6 +14,7 @@ import com.example.motivation.data.Phrase
 import com.example.motivation.infra.MotivationConstants
 import com.example.motivation.infra.SecurityPreferences
 import com.example.motivation.databinding.ActivityMainBinding
+import java.util.Locale
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
 
@@ -68,12 +70,14 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun handleGeneratePhrase() {
+        val lang = Locale.getDefault().language
         binding.textPhrase.text = Mock().getPhrase(categoryId)
     }
 
+    @SuppressLint("SetTextI18n")
     private fun handleGetUserName() {
         val name = SecurityPreferences(this).getString(MotivationConstants.KEY.USER_NAME)
-        binding.textName.text = "Olá, $name!"
+        binding.textName.text = "${getString(R.string.text_hello)} $name!"
     }
 
     private fun handleFilter(id: Int) {

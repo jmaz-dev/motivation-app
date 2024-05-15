@@ -7,7 +7,6 @@ data class Phrase(val description: String, val category: Int)
 class Mock {
     private val SUN = MotivationConstants.FILTER.SUN
     private val EMOJI = MotivationConstants.FILTER.EMOJI
-    private val ALL = MotivationConstants.FILTER.ALL
 
     val mListPhrase = listOf<Phrase>(
         Phrase("Não sabendo que era impossível, foi lá e fez.", EMOJI),

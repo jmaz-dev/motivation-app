@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Motivation</string>
+    <string name="text_hello">Hello, </string>
+    <string name="button_generate">New phrase</string>
+    <string name="save">Save</string>
+    <string name="what_name">What is your name?</string>
+    <string name="let_start">Let\'s get started!</string>
+    <string name="validation_mandatory_name">Name is mandatory</string>
+    <string name="sun_phrase">Generate phrase to begin the day.</string>
+    <string name="happy_phrase">Generate phrase to be happy.</string>
+    <string name="random_frase">Generate random phrase</string>
+</resources>
