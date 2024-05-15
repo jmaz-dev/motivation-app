@@ -36,18 +36,20 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             insets
         }
 
+    }
+
+    override fun onStart() {
+        super.onStart()
         /*EventListener*/
-        binding.buttonNewPhrase.setOnClickListener(this)
-        binding.imageAll.setOnClickListener(this)
-        binding.imageEmoji.setOnClickListener(this)
-        binding.imageSun.setOnClickListener(this)
+        handleEvents()
 
         /*Get Name*/
         handleGetUserName()
 
-        /*Set firstPick*/
+        /*Set Default*/
         handleFilter(R.id.image_all)
         handleGeneratePhrase()
+
     }
 
     override fun onClick(v: View) {
@@ -56,6 +58,13 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         } else if (v.id in listOf(R.id.image_all, R.id.image_emoji, R.id.image_sun)) {
             handleFilter(v.id)
         }
+    }
+
+    private fun handleEvents() {
+        binding.buttonNewPhrase.setOnClickListener(this)
+        binding.imageAll.setOnClickListener(this)
+        binding.imageEmoji.setOnClickListener(this)
+        binding.imageSun.setOnClickListener(this)
     }
 
     private fun handleGeneratePhrase() {
