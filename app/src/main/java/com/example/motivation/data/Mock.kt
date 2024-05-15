@@ -8,6 +8,7 @@ class Mock {
     private val SUN = MotivationConstants.FILTER.SUN
     private val EMOJI = MotivationConstants.FILTER.EMOJI
     private val ALL = MotivationConstants.FILTER.ALL
+
     val mListPhrase = listOf<Phrase>(
         Phrase("Não sabendo que era impossível, foi lá e fez.", EMOJI),
         Phrase("Você não é derrotado quando perde, você é derrotado quando desiste!", EMOJI),
@@ -23,4 +24,25 @@ class Mock {
         Phrase("Se você acredita, faz toda a diferença.", SUN),
         Phrase("Riscos devem ser corridos, porque o maior perigo é não arriscar nada!", SUN)
     )
+
+    fun getPhrase(categoryId: Int): String {
+        val phrase: List<Phrase> = mListPhrase
+
+        return when (categoryId) {
+            MotivationConstants.FILTER.SUN -> {
+                phrase.filter { it.category == MotivationConstants.FILTER.SUN }.random()
+                    .description
+            }
+
+            MotivationConstants.FILTER.EMOJI -> {
+                phrase.filter { it.category == MotivationConstants.FILTER.EMOJI }.random()
+                    .description
+            }
+
+            else -> {
+                phrase.random()
+                    .description
+            }
+        }
+    }
 }

@@ -59,27 +59,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun handleGeneratePhrase() {
-        val phrase: List<Phrase> = Mock().mListPhrase
-
-        when (categoryId) {
-            MotivationConstants.FILTER.SUN -> {
-                binding.textPhrase.text =
-                    phrase.filter { it.category == MotivationConstants.FILTER.SUN }.random()
-                        .description
-            }
-
-            MotivationConstants.FILTER.EMOJI -> {
-                binding.textPhrase.text =
-                    phrase.filter { it.category == MotivationConstants.FILTER.EMOJI }.random()
-                        .description
-            }
-
-            else -> {
-                binding.textPhrase.text =
-                    phrase.random()
-                        .description
-            }
-        }
+        binding.textPhrase.text = Mock().getPhrase(categoryId)
     }
 
     private fun handleGetUserName() {
